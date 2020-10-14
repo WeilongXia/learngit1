@@ -35,7 +35,12 @@ git rm file  &&   git commit -m "说明"
 如果错删了文件管理器里的文件，但是版本库的文件还在，git checkout -- file就可以直接用版本库的版本替换工作区的版本
 
 /**********************远程仓库***************************************/
-git remote add origin git@github.com:WeilongXia/learngit1.git （origin是远程库的名字，当然也可以改成别的，这一步是将本地库和远程库进行关联）
+git remote add origin git@server-name:path/repo-name.git （origin是远程库的名字，当然也可以改成别的，这一步是将本地库和远程库进行关联）
 git push -u origin master （把当前分支master推送到远程库origin，远程库是空的，第一次推送master分支时，加上了-u参数，Git不仅会把本地的master分支内容推送到远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令）
+从此以后，只要本地做了提交，就可以通过命令git push origin maste提交到远程库origin
 
+/************************从远程库克隆*********************************/
+想要将远程库的文件克隆到本地，只需要在本地目标路径下打开终端，输入git clone git@server-name:path/repo-name.git
+Git支持多种协议，包括https，但是ssh协议速度最快
 
+尚未学习部分：分支管理，标签管理，使用GitHub，自定义Git，使用SourceTree
